@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+
+  bind9:
+    build: .
+    image: drcoccodrillus/bind9:dev
+    container_name: bushido-bind9
+    restart: always
+    privileged: true
+    networks:
+      bushido-network:
+        ipv4_address: 172.100.0.2
+
+networks:
+  bushido-network:
+    name: bushido-network
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.100.0.0/24
+          gateway: 172.100.0.1

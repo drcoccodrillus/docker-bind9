@@ -1,0 +1,4 @@
+zone "bushido.local" {
+    type master;
+    file "/etc/bind/zones/db.bushido.local";
+};
